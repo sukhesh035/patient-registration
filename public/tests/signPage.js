@@ -5,7 +5,7 @@ function SignUp () {
       inputDob = element(by.model('registrationObj.dob')),
       inputWeight = element(by.model('registrationObj.weight')),
     //   readAge = element(by.binding('registrationObj.age')),
-      submit  = element(by.id('formSubmit'));
+    submit  = element(by.css('#formSubmit'));
   
       console.log("inputFullName **** : " + inputFullName.value);
 
