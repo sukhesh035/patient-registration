@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,30 +23,36 @@
         <div class="row">
             <h1>Patient Registration</h1>
             <div class="col-lg-12">
-                <form>
+                <form name="myForm">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" ng-class="{'is-invalid':errShowObj.name == true}" ng-model="registrationObj.name" placeholder="Enter fullname">
-                        <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.name">Your full name is requred.</small>
+                        <input type="text" class="form-control" name="name" ng-class="{'is-invalid':errShowObj.name == true}" ng-model="registrationObj.name"
+                            placeholder="Enter fullname" ng-pattern="/^[a-zA-Z]*$/">
+                        <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.name" na>Your full name is requred.</small>
+                        <small ng-show="myForm.name.$error.pattern">No numbers allowed in names</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Date of birth</label>
-                        <input type="date" ng-model="registrationObj.dob" ng-class="{'is-invalid':errShowObj.date == true}" class="form-control" placeholder="Select Date of birth" ng-change="calcAge(registrationObj.dob)">
+                        <input type="date" ng-model="registrationObj.dob" ng-class="{'is-invalid':errShowObj.date == true}" max="{{dateOptions.maxDate}}"
+                            class="form-control" placeholder="Select Date of birth" ng-change="calcAge(registrationObj.dob)">
                         <label>Age</label>
                         <h4>{{registrationObj.age}}</h4>
                         <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.date">Please give a proper date.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Weight</label>
-                        <input type="number" class="form-control" ng-model="registrationObj.weight" ng-class="{'is-invalid':errShowObj.weight == true}" placeholder="Enter witght in kgs">
+                        <input type="number" class="form-control" ng-model="registrationObj.weight" ng-class="{'is-invalid':errShowObj.weight == true}"
+                            placeholder="Enter witght in kgs">
                         <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.weight">Please give a proper numarical weight.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" ng-model="registrationObj.email" ng-class="{'is-invalid':errShowObj.email == true}" placeholder="Enter email">
+                        <input type="email" class="form-control" ng-model="registrationObj.email" name="email" ng-class="{'is-invalid':errShowObj.email == true}"
+                            placeholder="Enter email" ng-pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}">
                         <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.email">Invalid e-mail address.</small>
+                        <small ng-show="myForm.email.$invalid">Email should be in "****@****.***"</small>
                     </div>
-                    <button type="submit" class="btn btn-primary" ng-click="validateRegistration()">Submit</button>
+                    <button type="submit" class="btn btn-primary" ng-click="validateRegistration()" ng-disabled="myForm.$invalid">Submit</button>
                 </form>
             </div>
         </div>
