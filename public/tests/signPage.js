@@ -11,11 +11,11 @@ function SignUp () {
 
    this.fillFormFullName = function (fullname) {
     
-    inputFullName.sendKeys(fullname);
+     inputFullName.sendKeys(fullname);
    }
 
    this.fillFormDob = function (dob) {
-    inputDob.sendKeys(dob);
+   inputDob.sendKeys(dob);
    }
 
    this.fillFormWeight = function (weight) {
@@ -30,14 +30,7 @@ function SignUp () {
     submit.click()
    }
 
-   this.emptyFields = function (){
-    this.fillFormFullName("");
-    inputFullName.getAttribute('value').clear();
-    console.log("checking for inputFullName" + inputFullName.getAttribute('value'));
-    this.fillFormDob("");
-    this.fillFormWeight("");
-    this.fillFormEmail("");
-   }
+   
 
 }
 
