@@ -1,0 +1,26 @@
+{
+  "name": "patient_registration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage": "istanbul cover _mocha public/tests/registration_spec.js",
+    "seecoverage": "open coverage/lcov-report/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.14.5",
+    "protractor": "^5.3.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}
