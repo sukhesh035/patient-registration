@@ -24,16 +24,37 @@ describe("checking registration end to end",function(){
 
     var signup = new SignUp();
 
-    it('and type some personal information', function () {
+    it('1.Happy path,  testing with all given fields \n', function () {
+        
+        signup.fillFormFullName("sai");
+        signup.fillFormEmail("sai123@gmail.com");
+        signup.fillFormDob('03 04 1987');
+        signup.fillFormWeight('76');
+        signup.confirmSignUpButton();
+        
+       
+     });
+     it('2. Testing FullName with numbers, \n', function () {
         var inputUserName = element(by.id('fullNameError'));
-  
-        signup.fillFormFullName();
-        signup.fillFormEmail();
-        signup.fillFormDob();
-        signup.fillFormWeight();
-        // signup.fillFormAge();
-        // signup.confirmSignUpButton();
-        expect(inputUserName.getText()).toEqual('No numbers allowed in names');
-     })
+
+        signup.fillFormFullName("sai345");
+        signup.fillFormEmail("sai123@gmail.com");
+        signup.fillFormDob('03 04 1987');
+        signup.fillFormWeight('76');
+        signup.confirmSignUpButton();
+        expect(inputUserName.getText()).toEqual('No numbers/ special character allowed in names');
+        
+        
+     });
+     it('3. Testing FullName with special characters ,\n ', function () {
+        var inputUserName = element(by.id('fullNameError'));
+        signup.fillFormFullName("sai345");
+        signup.fillFormEmail("sai123@gmail.com");
+        signup.fillFormDob('03 04 1987');
+        signup.fillFormWeight('76');
+        signup.confirmSignUpButton();
+        expect(inputUserName.getText()).toEqual('No numbers/ special character allowed in names');
+        
+     });
 
 });

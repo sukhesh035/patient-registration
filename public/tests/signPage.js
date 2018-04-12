@@ -7,31 +7,38 @@ function SignUp () {
     //   readAge = element(by.binding('registrationObj.age')),
     submit  = element(by.css('#formSubmit'));
   
-      console.log("inputFullName **** : " + inputFullName.value);
+     
 
-   this.fillFormFullName = function () {
-    inputFullName.sendKeys('John123');
+   this.fillFormFullName = function (fullname) {
+    
+    inputFullName.sendKeys(fullname);
    }
 
-   this.fillFormEmail = function () {
-      inputUserEmail.sendKeys('john.smith@mail.com');
+   this.fillFormDob = function (dob) {
+    inputDob.sendKeys(dob);
    }
 
-   this.fillFormDob = function () {
-    inputDob.sendKeys('03 01 1975');
+   this.fillFormWeight = function (weight) {
+    inputWeight.sendKeys(weight);
    }
 
-   this.fillFormWeight = function () {
-    inputWeight.sendKeys('76');
+   this.fillFormEmail = function (email) {
+    inputUserEmail.sendKeys(email);
    }
-
-//    this.fillFormAge = function () {
-//     readAge.sendKeys('43');
-//    }
 
    this.confirmSignUpButton = function () {
-    submit.click();
+    submit.click()
    }
+
+   this.emptyFields = function (){
+    this.fillFormFullName("");
+    inputFullName.getAttribute('value').clear();
+    console.log("checking for inputFullName" + inputFullName.getAttribute('value'));
+    this.fillFormDob("");
+    this.fillFormWeight("");
+    this.fillFormEmail("");
+   }
+
 }
 
 module.exports = SignUp;
