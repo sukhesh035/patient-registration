@@ -6,12 +6,7 @@ app.use(bodyParser.json());
 app.use('/', express.static('public'));
 
 app.post('/registrationForm', function (req, res) {
-
-    console.log(req.body);
-
-
     res.sendStatus(200);
-    
 });
 
 gulp.task('express', function () {

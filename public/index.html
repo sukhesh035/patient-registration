@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input type="text" class="form-control" id="fullName" name="name" ng-class="{'is-invalid':errShowObj.name == true}" ng-model="registrationObj.name"
-                            placeholder="Enter fullname" ng-pattern="/^[a-zA-Z]*$/">
+                            placeholder="Enter fullname" ng-pattern="/^[a-zA-Z ]*$/">
                         <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.name" na>Your full name is requred.</small>
                         <small id="fullNameError" ng-show="myForm.name.$error.pattern">No numbers/ special character allowed in names</small>
                     </div>
