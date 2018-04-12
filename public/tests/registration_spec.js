@@ -16,7 +16,7 @@ browser.driver.controlFlow().execute = function() {
 
 describe("checking registration end to end",function(){
     afterEach(function(done){
-        console.log('calling after all');
+        //console.log('calling after all');
         browser.refresh();
         process.nextTick(done);
     });
@@ -79,7 +79,7 @@ describe("checking registration end to end",function(){
         signup.fillFormDob('ab/mmc/sass');
         signup.fillFormWeight('76');
         signup.confirmSignUpButton();
-        expect(inputUserName.getText()).toEqual('Please give a proper date (MM/DD/YYYY)."');
+        expect(inputUserName.getText()).toEqual('Please give a proper date (MM/DD/YYYY).');
       
      });
 

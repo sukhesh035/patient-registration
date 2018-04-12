@@ -10,7 +10,6 @@ function SignUp () {
      
 
    this.fillFormFullName = function (fullname) {
-    
      inputFullName.sendKeys(fullname);
    }
 
