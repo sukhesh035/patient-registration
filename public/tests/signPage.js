@@ -3,14 +3,14 @@ function SignUp () {
      var inputFullName = element(by.model('registrationObj.name')),
       inputUserEmail = element(by.model('registrationObj.email')),
       inputDob = element(by.model('registrationObj.dob')),
-      inputWeight = element(by.model('registrationObj.weight"')),
-      readAge = element(by.binding('registrationObj.age')),
-      submit  = element(by.css('#formSubmit'));
+      inputWeight = element(by.model('registrationObj.weight')),
+    //   readAge = element(by.binding('registrationObj.age')),
+      submit  = element(by.id('formSubmit'));
   
       console.log("inputFullName **** : " + inputFullName.value);
 
    this.fillFormFullName = function () {
-    inputFullName.sendKeys('John1234');
+    inputFullName.sendKeys('John123');
    }
 
    this.fillFormEmail = function () {
@@ -25,12 +25,12 @@ function SignUp () {
     inputWeight.sendKeys('76');
    }
 
-   this.fillFormAge = function () {
-    readAge.sendKeys('43');
-   }
+//    this.fillFormAge = function () {
+//     readAge.sendKeys('43');
+//    }
 
    this.confirmSignUpButton = function () {
-    submit.click()
+    submit.click();
    }
 }
 

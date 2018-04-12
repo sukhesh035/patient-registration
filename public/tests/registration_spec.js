@@ -25,13 +25,13 @@ describe("checking registration end to end",function(){
     var signup = new SignUp();
 
     it('and type some personal information', function () {
-        var inputUserName = element(by.model('fullName'));
+        var inputUserName = element(by.id('fullName'));
   
         signup.fillFormFullName();
         signup.fillFormEmail();
         signup.fillFormDob();
         signup.fillFormWeight();
-        signup.fillFormAge();
+        // signup.fillFormAge();
         signup.confirmSignUpButton();
         expect(inputUserName).not.toEqual(undefined);
      })

@@ -52,7 +52,7 @@
                         <small id="emailHelp" class="form-text text-muted" ng-show="errShowObj.email">Invalid e-mail address.</small>
                         <small ng-show="myForm.email.$invalid">Email should be in "****@****.***"</small>
                     </div>
-                    <button type="submit" class="btn btn-primary" ng-click="validateRegistration()" ng-disabled="myForm.$invalid">Submit</button>
+                    <button type="submit" class="btn btn-primary" ng-click="validateRegistration()" id="formSubmit" ng-disabled="myForm.$invalid">Submit</button>
                 </form>
             </div>
         </div>
