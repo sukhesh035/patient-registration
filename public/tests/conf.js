@@ -7,9 +7,7 @@ exports.config = {
         'browserName': 'chrome'
     },
 
-    plugins: [{
-        path: 'node_modules/protractor-istanbul-plugin'
-    }],
+    
 
     // Framework to use. Jasmine is recommended.
     framework: 'jasmine',
