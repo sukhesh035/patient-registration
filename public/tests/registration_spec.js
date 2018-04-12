@@ -36,6 +36,7 @@ describe("checking registration end to end",function(){
      });
      it('2. Testing FullName with numbers, \n', function () {
         var inputUserName = element(by.id('fullNameError'));
+<<<<<<< HEAD
 
         signup.fillFormFullName("sai345");
         signup.fillFormEmail("sai123@gmail.com");
@@ -56,5 +57,16 @@ describe("checking registration end to end",function(){
         expect(inputUserName.getText()).toEqual('No numbers/ special character allowed in names');
         
      });
+=======
+  
+        signup.fillFormFullName();
+        signup.fillFormEmail();
+        signup.fillFormDob();
+        signup.fillFormWeight();
+        // signup.fillFormAge();
+        // signup.confirmSignUpButton();
+        expect(inputUserName.getText()).toEqual('No numbers allowed in names');
+     })
+>>>>>>> 1d2769f756c731e73e85172e7582f3b3ad5610ae
 
 });

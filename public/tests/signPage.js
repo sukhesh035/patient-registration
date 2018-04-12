@@ -4,8 +4,8 @@ function SignUp () {
       inputUserEmail = element(by.model('registrationObj.email')),
       inputDob = element(by.model('registrationObj.dob')),
       inputWeight = element(by.model('registrationObj.weight')),
-      readAge = element(by.binding('registrationObj.age')),
-      submit  = element(by.css('#formSubmit'));
+    //   readAge = element(by.binding('registrationObj.age')),
+    submit  = element(by.css('#formSubmit'));
   
      
 
