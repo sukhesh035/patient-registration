@@ -70,7 +70,9 @@ app.controller("registrationCtrl", ["$scope", "$http", function ($scope, $http) 
     $scope.submitRegistration = function () {
         console.log($scope.registrationObj);
         $http.post("/registrationForm", $scope.registrationObj).then(function (response) {
-            alert("You are successfully registered.");
+            console.log ("log status " + response.data.status);
+            console.log("You are successfully registered.");
+            $scope.registrationObj ={};
         }, function (err) {
 
         });
