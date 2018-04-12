@@ -41,14 +41,14 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Weight</label>
-                        <input type="text" id="weight" name="weight" class="form-control" ng-model="registrationObj.weight" ng-class="{'is-invalid':errShowObj.weight == true}"
+                        <input type="text" id="weight" name="weight" class="form-control" ng-model="registrationObj.weight" ng-class="{'is-invalid':myForm.weight.$error.pattern == true}"
                             placeholder="Enter witght in kgs" ng-pattern='/^[0-9]+$/'>
                         <small id="emailHelp" class="form-text text-muted" ng-show="myForm.weight.$error.pattern">Please give a proper numarical weight.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" id= "email"  name="email" class="form-control" ng-model="registrationObj.email" name="email" ng-class="{'is-invalid':errShowObj.email == true}"
-                            placeholder="Enter email" ng-pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}">
+                            placeholder="Enter email" ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'>
                         <small id="emailIncorrect" ng-show="myForm.email.$invalid">Email should be in "****@****.***"</small>
                     </div>
                     <button type="submit" class="btn btn-primary" ng-click="validateRegistration()" id="formSubmit" >Submit</button>

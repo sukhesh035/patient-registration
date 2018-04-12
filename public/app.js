@@ -68,11 +68,11 @@ app.controller("registrationCtrl", ["$scope", "$http", function ($scope, $http) 
 
     //ajax Call to save the patient info to the back-end
     $scope.submitRegistration = function () {
-        console.log($scope.registrationObj);
+        //console.log($scope.registrationObj);
         $http.post("/registrationForm", $scope.registrationObj).then(function (response) {
-            console.log ("log status " + response.data.status);
-            console.log("You are successfully registered.");
-            $scope.registrationObj ={};
+            //console.log ("log status " + response.data.status);
+           console.log("You are successfully registered.");
+            // $scope.registrationObj ={};
         }, function (err) {
 
         });
